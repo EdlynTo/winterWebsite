@@ -21,21 +21,41 @@
 
         @keyframes glow {
             0% {
-                text-shadow: 0 0 20px #00d4ff;
+                text-shadow: 0 0 20px #89ebff;
             }
             100% {
-                text-shadow: 0 0 25px #ff00ff;
+                text-shadow: 0 0 25px #ff9eff;
             }
         }
 
         h2 {
-            color: rgb(221, 152, 152);
+            color: rgb(255, 165, 165);
         }
 
-        img {
+        #main-image {
             width: 500px;
             border: 6px solid green;
             border-radius: 10px;
+            cursor: url('christmas-cursor.png'),pointer;
+        }
+
+        #popup {
+            position: fixed;
+            top: 7%;
+            left: 16%;
+            transform: translateX(100px) rotate(-60deg);
+            transition: transform 0.5s ease-in-out;
+            z-index: -1;
+            padding: 10px;
+            display: none;
+        }
+
+        #popup.show {
+            transform: translateX(0);
+        }
+
+        #popup img {
+            width: 400px;
         }
 
         .snowflake {
@@ -83,7 +103,27 @@
     <div class="snowflake">❄️</div>
     <div class="snowflake">❄️</div>
     <h1>Wishing you an amazing Christmas!</h1>
-    <img src="https://img.freepik.com/free-vector/christmas-card_53876-57271.jpg" alt="">
-    <h2>From: Edlyn</h2>
+    <img id="main-image" src="https://img.freepik.com/free-vector/christmas-card_53876-57271.jpg" alt="">
+    <div id="popup">
+        <img id="popup-img" src="santadino.png" alt="dino image">
+    </div>
+    <h2>~ Edlyn</h2>
+
+    <script>
+        const mainImage = document.getElementById('main-image');
+        const popup = document.getElementById('popup');
+
+        mainImage.addEventListener('click', () => {
+            if (popup.style.display === 'block') {
+                popup.classList.remove('show');
+                setTimeout(() => popup.style.display = 'none', 500);
+            } else {
+                popup.style.display = 'block';
+                setTimeout(() => popup.classList.add('show'), 10);
+            }
+        });
+
+    </script>
+
 </body>
 </html>
