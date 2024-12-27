@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Holidays!</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet">
     <style>
         body {
             height: 100vh;
             overflow: hidden;
             text-align: center;
             padding-top: 20px;
-            font-family: cursive;
             background-image: linear-gradient(to bottom right, #001f3f, #1e3a8a); 
         }
 
         h1 {
             color: white;
             animation: glow 2s ease-in-out infinite alternate;
+            font-family: "Henny Penny", cursive;
         }
 
         @keyframes glow {
@@ -30,11 +32,12 @@
 
         h2 {
             color: rgb(255, 165, 165);
+            font-family: "Sofia", cursive;
         }
 
         #main-image {
             width: 500px;
-            border: 6px solid green;
+            border: 10px solid green;
             border-radius: 10px;
             cursor: url('images/christmas-cursor.png'), pointer;
         }
@@ -108,7 +111,7 @@
     <div id="popup">
         <img id="popup-img" src="images/santadino.png" alt="dino image">
     </div>
-    <h2>~ Edlyn</h2>
+    <h2>Click on the image above for an animation! Thanks for checking out this website.</h2>
 
     <script>
         const mainImage = document.getElementById('main-image');
